@@ -70,7 +70,7 @@ def preprocess_image(image):
 
 # Streamlit application
 st.title("Image Upload and Classification")
-
+st.write("upload your own hand written digit(0-9) image")
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
 if uploaded_file is not None:
@@ -86,4 +86,5 @@ if uploaded_file is not None:
     st.image(uploaded_file, caption='Uploaded Image.', use_column_width=True)
     st.write("Class prediction:", predicted.item())
 
-
+st.write("**Note: This project results sometime wrong or misclassify \
+so you will write different types of shapes of digits it maybe work**")
