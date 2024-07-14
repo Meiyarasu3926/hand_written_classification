@@ -55,9 +55,6 @@ model.load_state_dict(torch.load('cnn_model.pth', map_location=device))
 model.to(device)
 model.eval()
 
-if torch.cuda.is_available():
-  model = model.cuda()
-
 def preprocess_image(image):
     img = Image.open(image).convert('L')
     img = np.array(img)
@@ -70,7 +67,7 @@ def preprocess_image(image):
 
 # Streamlit application
 st.title("Image Upload and Classification")
-st.write("upload your own hand written digit(0-9) image")
+st.write("upload your own hand written digit(0-9 single digit only) image")
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
 if uploaded_file is not None:
