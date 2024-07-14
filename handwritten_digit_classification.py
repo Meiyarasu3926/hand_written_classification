@@ -67,7 +67,7 @@ def preprocess_image(image):
 
 # Streamlit application
 st.title("Image Upload and Classification")
-st.write("upload your own hand written digit(0-9 single digit only) image")
+st.write("Upload your own handwritten digit(0-9 single digit only) image")
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
 if uploaded_file is not None:
