@@ -50,7 +50,9 @@ class CNN(nn.Module):
         return out
 
 model = CNN()
-model.load_state_dict(torch.load('cnn_model.pth'))
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.load_state_dict(torch.load('cnn_model.pth', map_location=device))
+model.to(device)
 model.eval()
 
 if torch.cuda.is_available():
@@ -75,10 +77,8 @@ if uploaded_file is not None:
     image = preprocess_image(uploaded_file)
 
     img = image.view(1, 1, 28, 28)
-    img = Variable(img)
+    img = Variable(img).to(device)
 
-    if torch.cuda.is_available():
-        img = img.cuda()
 
     output = model(img)
     _, predicted = torch.max(output, 1)
