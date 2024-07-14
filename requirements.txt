@@ -1,0 +1,8 @@
+numpy==1.25.2
+torchvision @ https://download.pytorch.org/whl/cu121/torchvision-0.18.0%2Bcu121-cp310-cp310
+Pillow==9.4.0
+torch @ https://download.pytorch.org/whl/cu121/torch-2.3.0%2Bcu121-cp310-cp310
+cuda-python==12.2.1
+streamlit==1.36.0
+Python==3.11.9
+opencv-python==4.8.0.76
